@@ -1,0 +1,202 @@
+/* CamoChat Extension Styles */
+@import url(https://db.onlinewebfonts.com/c/289b52b75190274b4e20f0987ef13edd?family=Sohne);
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+/* Add your custom styles here */
+/* Add your custom styles here */
+
+#page-header,
+#thread {
+    background-color: #fff !important;
+}
+
+#thread-bottom .text-base {
+    display: none;
+}
+
+code {
+    font-family: "Source Code Pro", monospace !important;
+}
+
+pre .bg-token-sidebar-surface-primary {
+    background-color: #fbfbfb !important;
+}
+
+.medium-code-block {
+    border: 1px solid #E5E5E5 !important;
+}
+
+.origin-top-start {
+    display: none;
+}
+
+*,
+::backdrop,
+:after,
+:before {
+    color: #000;
+    background: inherit;
+}
+
+:is(.light .dark, .dark) .hljs-comment {
+    color: #007400 !important;
+}
+
+article {
+    max-width: 70% !important;
+    margin: 0 auto !important;
+}
+
+.camo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.camo-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.camo-fake-user {
+    border-radius: 50%;
+}
+
+.camo-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.camo-write-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    font-size: 14px;
+}
+
+.camo-auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.camo-signup-button {
+    background-color: green;
+    color: white !important;
+    padding: 5px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.camo-header-first {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.camo-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    background-color: #f8f8f8;
+    border-radius: 25px;
+    padding: 8px 12px;
+}
+
+.camo-search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    padding: 0 8px;
+    outline: none !important;
+    border: none;
+}
+
+.camo-search-input:focus {
+    outline: none !important;
+}
+
+.camo-search-input::placeholder {
+    color: #aaa;
+}
+
+.camo-search-container svg {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #000;
+}
+
+.medium-article-container {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.medium-article-container h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 32px 0;
+}
+
+.medium-article-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.medium-article-info img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.medium-article-info span {
+    color: #6b6b6b;
+}
+
+.medium-article-info_name {
+    color: #000 !important;
+}
+
+.medium-article-info a {
+    border: 1px solid;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-weight: 500;
+}
+
+.medium-article-comments_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 48rem;
+    margin: 32px auto 0;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 15px;
+}
+
+.medium-article-actions_left,
+.medium-article-actions_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.medium-article-action_item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#thread *:not(code):not(pre):not(code *):not(pre *):not(.camo-signup-button):not(.medium-article-info span) {
+    color: #000 !important;
+}

@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Camo Chat",
+    "icons": {
+        "128": "logo.png"
+    },
+    "action": {
+        "default_title": "Camo Chat",
+        "default_popup": "index.html"
+    },
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "permissions": [
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["styles.css"],
+            "matches": ["https://chatgpt.com/*"]
+        }
+    ],
+    "version": "1.0.0"
+}
