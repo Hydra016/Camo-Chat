@@ -59,6 +59,9 @@
     </div>
     `;
 
+  const messageIcon = `<div class="medium-message-icon"><img src="https://ik.imagekit.io/5j8yqumfl/conversation.png" /></div>`;
+  const messageClose = `<div class="medium-message-close"><img src="https://ik.imagekit.io/5j8yqumfl/close.png" /></div>`;
+
   function executeCamoChat() {
     const articles = document.querySelectorAll(
       "article.text-token-text-primary"
@@ -68,6 +71,7 @@
     const mainInputContainer = document.querySelector(
       "#thread-bottom-container"
     );
+    const mainThreadContainer = document.querySelector("#thread-bottom");
 
     if (articles.length > 0) {
       articles[0].insertAdjacentHTML("afterbegin", mediumArticleHeader);
@@ -93,6 +97,32 @@
           .querySelector("code")
           .parentElement.classList.add("medium-code-block");
       });
+    });
+
+    if (mainThreadContainer) {
+      mainThreadContainer.children[0].children[0].classList.add(
+        "medium-main-input"
+      );
+
+      mainThreadContainer.insertAdjacentHTML("afterbegin", messageIcon);
+    }
+
+    const mediumMainIcon = document.querySelector(".medium-message-icon");
+    const mediumMainInput = document.querySelector(".medium-main-input");
+
+    mediumMainIcon.addEventListener("click", () => {
+      document.querySelector("#thread-bottom .text-base").style.display =
+        "block";
+      mediumMainIcon.style.display = "none";
+    });
+
+    mediumMainInput.insertAdjacentHTML("afterbegin", messageClose);
+
+    const mediumMessageClose = document.querySelector(".medium-message-close");
+    mediumMessageClose.addEventListener("click", () => {
+      document.querySelector("#thread-bottom .text-base").style.display =
+        "none";
+      mediumMainIcon.style.display = "block";
     });
   }
 

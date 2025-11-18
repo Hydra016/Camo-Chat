@@ -9,8 +9,62 @@
     background-color: #fff !important;
 }
 
+[data-testid="composer-speech-button"],
+[aria-label="Dictate button"] {
+    display: none !important;
+}
+
+#thread-bottom-container {
+    width: fit-content;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+aside {
+    display: none;
+}
+
+.composer-btn {
+    background-color: unset !important;
+}
+
+.medium-message-close {
+    width: fit-content;
+    margin-left: 20px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.medium-message-close img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 #thread-bottom .text-base {
     display: none;
+}
+
+.medium-message-icon {
+    margin-left: 10px;
+    margin-bottom: 16px;
+}
+
+.medium-message-icon img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.medium-main-input {
+    width: 300px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
 
 code {
@@ -37,7 +91,8 @@ pre .bg-token-sidebar-surface-primary {
     background: inherit;
 }
 
-:is(.light .dark, .dark) .hljs-comment {
+:is(.light .dark, .dark) .hljs-comment,
+.hljs-meta {
     color: #007400 !important;
 }
 
@@ -195,6 +250,108 @@ article {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.review-box {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    border-radius: 16px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    width: fit-content;
+    border: 1px solid;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+/* Summary (collapsed header) */
+.review-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hide default disclosure triangle */
+.review-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Optional custom chevron */
+.review-summary::after {
+    content: "▾";
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* Rotate chevron when open */
+.review-box[open] .review-summary::after {
+    transform: rotate(180deg);
+}
+
+/* Body (expanded content) */
+.review-body {
+    padding: 0 16px 16px;
+    border-top: 1px solid #e6e6e6;
+    animation: review-open 0.2s ease-out;
+}
+
+@keyframes review-open {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.review-textarea {
+    width: 100%;
+    min-height: 80px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    font-size: 14px;
+    resize: vertical;
+    outline: none;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.review-textarea:focus {
+    border-color: #1a8917;
+    /* Medium-like green */
+    box-shadow: 0 0 0 1px #1a8917;
+}
+
+/* Actions row */
+.review-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.review-submit {
+    border: none;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    background: #1a8917;
+    color: #fff;
+}
+
+.review-submit:hover {
+    background: #136412;
 }
 
 #thread *:not(code):not(pre):not(code *):not(pre *):not(.camo-signup-button):not(.medium-article-info span) {
